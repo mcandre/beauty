@@ -27,7 +27,7 @@ asBeautifulAs n = [ k | k <- [0 .. lg n], beauty (n - (2^k)) == beauty n ]
 -- Given n and a starting player
 whoWouldWin :: Player -> Int -> Player
 whoWouldWin p n
-  | n < 1 = p --switchTurn p
+  | n < 1 = p
   | n == 1 = switchTurn p
   | length ks >= 1 = whoWouldWin (switchTurn p) n'
   | otherwise = switchTurn p
