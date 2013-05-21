@@ -42,3 +42,10 @@ Where `T` is the number of test cases and `X` is a starting board number, determ
     Second Player
     First Player
     Second Player
+
+# EXAMPLE
+
+`test.sh` displays no output when the code works as expected.
+
+    $ ./test.sh
+    $
