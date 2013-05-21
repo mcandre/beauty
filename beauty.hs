@@ -3,15 +3,18 @@
 import Data.Bits (popCount)
 import Control.Monad (replicateM_)
 
-data Player = First | Second
+data Player = P Bool
+
+firstPlayer = P True
 
 instance Show Player where
-  show First = "First Player"
-  show Second = "Second Player"
+  show (P b) = order ++ " Player"
+    where
+      order = if b then "First" else "Second"
 
-turn First = Second
-turn Second = First
+turn (P b) = P (not b)
 
+-- Wrap logBase 2 over integers
 lg = floor . logBase 2 . fromIntegral
 
 -- Number of 1's in binary representation
@@ -28,6 +31,7 @@ whoWouldWin p n = case ns' of
   -- optimal play
   n':_ -> whoWouldWin p' n'
   where
+    -- brute force
     ns' = [ n' |
             k <- [0 .. lg n],
             let n' = n - 2^k,
@@ -42,4 +46,4 @@ main = do
   replicateM_ testCases $ do
     n' <- getLine
     let n = read n' :: Int
-    (print . whoWouldWin First) n
+    (print . whoWouldWin firstPlayer) n
