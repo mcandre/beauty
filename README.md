@@ -47,6 +47,10 @@ Where `T` is the number of test cases and `X` is a starting board number, determ
 
 * [Haskell](http://www.haskell.org/)
 
+## Optional
+
+* [Ruby](http://www.ruby-lang.org)
+
 # DEVELOPMENT
 
 Local continuous integration while you code:
