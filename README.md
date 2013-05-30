@@ -43,9 +43,16 @@ Where `T` is the number of test cases and `X` is a starting board number, determ
     First Player
     Second Player
 
+# DEVELOPMENT
+
+Local continuous integration while you code:
+
+    $ make guard
+
 # EXAMPLE
 
-`test.sh` displays no output when the code works as expected.
+`make test` displays little output when the code works as expected.
 
-    $ ./test.sh
+    $ make test
+    ./test.sh
     $
