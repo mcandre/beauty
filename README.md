@@ -56,6 +56,11 @@ Local continuous integration while you code:
     $ make guard
     >...
 
+# Linting
+
+    $ cabal install hlint
+    $ make lint
+
 # EXAMPLE
 
 `make test` displays little output when the code works as expected.

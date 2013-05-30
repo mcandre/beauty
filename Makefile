@@ -5,3 +5,6 @@ test: beauty.hs in.txt out.txt
 
 guard: Guardfile
 	bundle exec guard
+
+lint: beauty.hs
+	hlint beauty.hs
