@@ -48,6 +48,7 @@ Where `T` is the number of test cases and `X` is a starting board number, determ
 Local continuous integration while you code:
 
     $ make guard
+    >...
 
 # EXAMPLE
 
