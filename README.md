@@ -43,9 +43,15 @@ Where `T` is the number of test cases and `X` is a starting board number, determ
     First Player
     Second Player
 
+# REQUIREMENTS
+
+* [Haskell](http://www.haskell.org/)
+
 # DEVELOPMENT
 
 Local continuous integration while you code:
+
+    $ bundle
 
     $ make guard
     >...
