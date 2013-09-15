@@ -47,23 +47,30 @@ Where `T` is the number of test cases and `X` is a starting board number, determ
 
 * [Haskell](http://www.haskell.org/)
 
+## Optional
+
+* [Ruby](https://www.ruby-lang.org/) 1.9+
+* [Guard](http://guardgem.org/) 1.8.2+
+
+Use `bundle` to install Guard.
+
 # DEVELOPMENT
+
+## Guard
 
 Local continuous integration while you code:
 
-    $ bundle
+    $ guard
+    ...
 
-    $ make guard
-    >...
-
-# Linting
+## Lint
 
     $ cabal install hlint
     $ make lint
 
 # EXAMPLE
 
-`make test` displays little output when the code works as expected.
+`make test` displays minimal output when the code works as expected.
 
     $ make test
     ./test.sh
