@@ -1,11 +1,11 @@
 guard :shell do
-  watch("Gemfile") do |m|
-    title = "Bundler output"
-    msg = "Bundler Failure"
+  watch('Gemfile') do |m|
+    title = 'Bundler output'
+    msg = 'Bundler Failure'
     status = :failed
 
-    if system("bundle")
-      msg = "Bundled"
+    if `bundle`
+      msg = 'Bundled'
       status = :status
     end
 
@@ -14,13 +14,13 @@ guard :shell do
     "-> #{msg}"
   end
 
-  watch("beauty.hs") do |m|
-    title = "Test output"
-    msg = "Output does not match test output"
+  watch('beauty.hs') do |m|
+    title = 'Test output'
+    msg = 'Output does not match test output'
     status = :failed
 
-    if system("./test.sh")
-      msg = "Matches test output"
+    if system('./test.sh')
+      msg = 'Matches test output'
       status = :success
     end
 
