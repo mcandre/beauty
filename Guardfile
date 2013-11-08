@@ -19,7 +19,7 @@ guard :shell do
     msg = 'Output does not match test output'
     status = :failed
 
-    if system('./test.sh')
+    if `./test.sh`
       msg = 'Matches test output'
       status = :success
     end
