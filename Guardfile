@@ -1,10 +1,9 @@
 guard :shell do
-  watch('beauty.hs') do |m|
+  watch(/Makefile|(.*\.hs)|(.*\.txt)/) do |m|
     title = 'Test'
-    msg = `./test.sh`
+    eager './test.sh'
     status = ($?.success? && :success) || :failed
-
-    n msg, title, status
-    "-> #{msg}"
+    n '', title, status
+    ''
   end
 end
