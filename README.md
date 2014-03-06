@@ -56,11 +56,9 @@ Use `bundle` to install Guard.
 
 # DEVELOPMENT
 
-## Guard
+## Spell Check
 
-Local continuous integration while you code:
-
-    $ guard
+    $ aspelllint
     ...
 
 ## Lint
@@ -68,7 +66,14 @@ Local continuous integration while you code:
     $ cabal install hlint
     $ make lint
 
-# EXAMPLE
+## Guard
+
+Local continuous integration while you code:
+
+    $ guard
+    ...
+
+## Test
 
 `make test` displays minimal output when the code works as expected.
 
