@@ -1,10 +1,13 @@
 #!/usr/bin/env runhaskell
 
+module Beauty where
+
 import Data.Bits (popCount)
 import Control.Monad (replicateM_)
 
 data Player = P Bool
 
+firstPlayer :: Player
 firstPlayer = P True
 
 instance Show Player where
@@ -12,12 +15,15 @@ instance Show Player where
     where
       order = if b then "First" else "Second"
 
+turn :: Player -> Player
 turn (P b) = P (not b)
 
 -- Wrap logBase 2 over integers
-lg = floor . logBase 2 . fromIntegral
+lg :: (Integral a) => a -> a
+lg = floor . logBase (2.0 :: Double) . fromIntegral
 
 -- Number of 1's in binary representation
+beauty :: Int -> Int
 beauty = popCount
 
 -- Determines which player would win a game,
