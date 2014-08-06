@@ -1,14 +1,15 @@
-BIN=beauty
+BIN=bin/beauty
 
 FLAGS=-O2 -Wall -fwarn-tabs --make -fforce-recomp -o $(BIN) -main-is Beauty
 
 all: test
 
-test: test.sh $(BIN) in.txt out.txt
-	bash -c 'diff <( ./beauty < in.txt ) out.txt'
+test: $(BIN) in.txt out.txt
+	bash -c 'diff <( $(BIN) < in.txt ) out.txt'
 
 $(BIN): Beauty.hs
-	ghc $(FLAGS) -o beauty Beauty.hs
+	mkdir -p bin/
+	ghc $(FLAGS) -o $(BIN) Beauty.hs
 
 guard: Guardfile
 	bundle exec guard
@@ -17,7 +18,6 @@ lint: beauty.hs
 	hlint beauty.hs
 
 clean:
-	-rm $(BIN)
-	-rm *.exe
+	-rm -rf bin/
 	-rm *.o
 	-rm *.hi

@@ -1,5 +1,6 @@
-*.exe
+bin/
 *.o
 *.hi
-beauty
 Gemfile.lock
+Thumbs.db
+.DS_Store
